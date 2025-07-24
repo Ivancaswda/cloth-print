@@ -84,7 +84,7 @@ const OrderItem = ({ order }: { order: Order }) =>
                        return (
                            <li key={i} className="flex items-start gap-4 border rounded p-3">
                                {/* Изображения: продукт и дизайн */}
-                               <div className="flex  gap-2">
+                               <div className="flex sm:flex-row flex-col  gap-2">
                                    {/* Фото продукта */}
                                    {images.length > 0 ? (
                                        <div
@@ -105,7 +105,7 @@ const OrderItem = ({ order }: { order: Order }) =>
                                        </div>
                                    )}
 
-                                   {/* Кастомный дизайн */}
+
                                    {item.design ? (
                                        <div className="w-20 h-20 relative rounded border border-[4px] border-[#81dd1f] overflow-hidden">
                                            <Image
@@ -155,7 +155,7 @@ const OrderItem = ({ order }: { order: Order }) =>
                            e.stopPropagation();
                            prevImage();
                        }}
-                       className="absolute flex items-center justify-center rounded-full px-4 py-4 transition bg-neutral-800 hover:bg-neutral-800/80 left-4 text-white text-3xl"
+                       className="absolute flex items-center justify-center rounded-full z-20 px-4 py-4 transition bg-neutral-800 hover:bg-neutral-800/80 left-4 text-white text-3xl"
                    >
 
                        <ArrowLeftCircle/>

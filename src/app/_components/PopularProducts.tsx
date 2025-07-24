@@ -65,8 +65,8 @@ const PopularProducts = () => {
                             </div>
                         )} <h2 className='text-lg font-medium'>{product?.title}</h2>
                         <Link href={`/product/${product.documentId}`}>
-                        <Button className='mt-2 w-full bg-[#81dd1f]'>
-                            <Palette/>
+                        <Button className='mt-2 text-xs sm:text-sm w-[120px] sm:w-full bg-[#81dd1f]'>
+                            <Palette className='hidden sm:block'/>
                             Кастомизировать</Button>
                             </Link>
                     </div>
