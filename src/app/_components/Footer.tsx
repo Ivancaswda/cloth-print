@@ -6,14 +6,14 @@ const Footer = () => {
         <footer className="bg-gray-100 border-t border-gray-300 mt-20 px-6 py-10 md:px-20">
             <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between gap-8">
 
-                {/* Логотип и описание */}
+
                 <div className="max-w-xs">
                    <Image alt='logo' src='/logo.png' width={80} height={80} className='rounded-xl mb-2'/>
                     <p className="text-gray-700 text-sm">
                         Высококачественные принты на заказ для вашей одежды. Выразите свой стиль, воплотите свои идеи.  </p>
                 </div>
 
-                {/* Навигация */}
+
                 <nav className="flex flex-col sm:flex-row gap-8">
                     <div>
                         <h3 className="text-gray-900 font-semibold mb-2">Explore</h3>
@@ -36,7 +36,7 @@ const Footer = () => {
                     </div>
                 </nav>
 
-                {/* Соцсети */}
+
                 <div>
                     <h3 className="text-gray-900 font-semibold mb-2">Наши соц. сети</h3>
                     <div className="flex gap-4 text-gray-600">

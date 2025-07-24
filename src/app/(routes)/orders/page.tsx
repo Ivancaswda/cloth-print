@@ -38,7 +38,7 @@ const OrdersPage = () => {
         axios
             .get(`/api/order?email=${userDetail.email}`)
             .then((res) => {
-                // Сортируем заказы по дате, новые сверху
+
                 const sortedOrders = res.data.sort(
                     (a: Order, b: Order) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
                 );
@@ -68,11 +68,11 @@ const OrdersPage = () => {
         );
     }
 
-    // Показываем только первые 5 заказов
+
     const visibleOrders = orders.slice(0, 5);
-    // Остальные для модалки
+
     const hiddenOrders = orders.slice(5);
-    console.log(orders)
+
     return (
         <section className="px-6 py-8 max-w-4xl mx-auto">
             <h1 className="text-3xl font-bold mb-6">Ваши заказы</h1>

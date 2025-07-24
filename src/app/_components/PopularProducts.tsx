@@ -35,7 +35,7 @@ const PopularProducts = () => {
         setLoading(true)
 
         const result = await axios.get('/api/products?isPopular=1')
-        console.log(result?.data)
+
 
         setProductList(result?.data)
         setLoading(false)

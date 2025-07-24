@@ -54,7 +54,7 @@ const Header = () => {
 
     const googleLogin = useGoogleLogin({
         onSuccess: async (tokenResponse) => {
-            console.log(tokenResponse)
+
             localStorage.setItem('tokenResponse', JSON.stringify(tokenResponse))
            await GetUserProfile(tokenResponse?.access_token)
             //save to db and share throught of application
@@ -69,7 +69,7 @@ const Header = () => {
           const userInfo = await axios.get('https://www.googleapis.com/oauth2/v3/userinfo',
               {headers: {Authorization: 'Bearer ' + access_token}})
 
-          console.log(userInfo)
+
           setUser(userInfo?.data)
           setUserDetail(userInfo?.data)
          await SaveNewUser(userInfo?.data)
@@ -87,7 +87,7 @@ const Header = () => {
             email: user.email,
             picture: user.picture
         })
-        console.log(result.data)
+
         setLoading(false)
     }
     useEffect(() => {
@@ -97,29 +97,29 @@ const Header = () => {
     }, [userDetail?.email])
 
     const handleLogout = () => {
-        localStorage.removeItem('tokenResponse'); // удаляем токен
-        setUser(undefined);                       // сбрасываем user в Header
-        setUserDetail(undefined);                 // сбрасываем userDetail в context
-        setCart([]);                              // очищаем корзину
+        localStorage.removeItem('tokenResponse');
+        setUser(undefined);
+        setUserDetail(undefined);
+        setCart([]);
 
-        // Перенаправляем на главную (если нужно)
+
         window.location.href = '/';
     };
 
-    console.log(userDetail)
+
 
     const GetCartList = async () => {
         const result = await axios.get('/api/cart?email=' + userDetail?.email)
 
-        console.log(result.data)
+
         setCart(result.data)
     }
-    console.log(userDetail)
+
     if (loading ) {
         return <LoaderOne/>
     }
 
-    console.log(cart)
+
 
 
     return (

@@ -10,7 +10,7 @@ export async function GET (req: NextRequest) {
 
     try {           // in order to get 2 level info means image we are adding such populate
         const result = await axiosClient.get('/carts?filters[userEmail][$eq]=' + email + '&populate[products][populate][0]=productImage')
-        console.log(result.data.data)
+
         return NextResponse.json(result.data.data)
     } catch (error) {
         return NextResponse.json(error)
@@ -31,7 +31,7 @@ export async function POST(req:NextRequest) {
 
         },
     };
-    console.log(data)
+
 
     try {
        const result = await axiosClient.post('/carts', data)

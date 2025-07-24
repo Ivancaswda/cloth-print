@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
         service: "gmail",
         auth: {
             user: process.env.GMAIL_EMAIL,
-            pass: process.env.GMAIL_APP_PASSWORD,  // пароль приложения
+            pass: process.env.GMAIL_APP_PASSWORD,
         },
         tls: {
             rejectUnauthorized: false,
@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
 
     try {
         await transporter.sendMail({
-            from: `"Edu Support" <${process.env.YANDEX_EMAIL}>`,
+            from: `"ClothPrint" <${process.env.YANDEX_EMAIL}>`,
             to: process.env.SUPPORT_EMAIL,
             subject: `Жалоба: ${category}`,
             text: `

@@ -38,7 +38,7 @@ const OrderItem = ({ order }: { order: Order }) =>
 
    return (
        <li className="border border-gray-200 rounded-lg p-6 shadow-sm bg-white">
-           {/* Заголовок */}
+
            <div className="flex items-center justify-between mb-3">
                <div>
                    <p className="text-sm text-gray-500">
@@ -73,19 +73,19 @@ const OrderItem = ({ order }: { order: Order }) =>
                </div>
            </div>
 
-           {/* Тело */}
+
            <div className="border-t pt-4">
                <p className="font-semibold mb-2">Вещи: ({order?.items.length})</p>
                <ul className="space-y-4">
                    {order?.items?.map((item: any, i: number) => {
                        const product = item.products?.[0];
                        const images: string[] = product?.productImage ?? [];
-                       console.log(images)
+
                        return (
                            <li key={i} className="flex items-start gap-4 border rounded p-3">
-                               {/* Изображения: продукт и дизайн */}
+
                                <div className="flex sm:flex-row flex-col  gap-2">
-                                   {/* Фото продукта */}
+
                                    {images.length > 0 ? (
                                        <div
                                            onClick={() => handleImageClick(images)}
@@ -123,7 +123,7 @@ const OrderItem = ({ order }: { order: Order }) =>
                                    )}
                                </div>
 
-                               {/* Инфо */}
+
                                <div className="flex flex-col flex-1">
                                    <p className="font-semibold text-sm">{product?.title || 'Неизвестный товар'}</p>
                                    <p className="text-sm text-gray-500">
@@ -144,7 +144,7 @@ const OrderItem = ({ order }: { order: Order }) =>
                <p className="mt-4 font-bold text-right">Итого: €{order.amount.toFixed(2)}</p>
            </div>
 
-           {/* Модалка с изображениями */}
+
            {modalImages && (
                <div
                    className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center"

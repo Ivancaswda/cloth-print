@@ -1,4 +1,4 @@
-// ❗ Серверный API-роут
+
 import { NextResponse } from "next/server";
 import {imagekit} from "@/lib/imageKitInstance";
 

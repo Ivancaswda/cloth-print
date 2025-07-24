@@ -8,8 +8,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
     apiVersion: '2022-11-15',
 });
 function generateOrderCode() {
-    const now = Date.now().toString().slice(-6); // последние 6 цифр времени
-    const random = Math.floor(1000 + Math.random() * 9000); // 4 цифры
+    const now = Date.now().toString().slice(-6);
+    const random = Math.floor(1000 + Math.random() * 9000);
     return `ORD-${now}-${random}`;
 }
 export async function GET(req: NextRequest) {

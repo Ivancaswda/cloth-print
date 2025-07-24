@@ -13,7 +13,7 @@ import {CartContext} from "../../../../../context/CartContext";
 import {UserDetailContext} from "../../../../../context/UserDetailContext";
 const ProductList = () => {
     const {categoryName} = useParams()
-    console.log(categoryName)
+
     const [productList, setProductList] = useState<Product[] | []>()
     const [loading, setLoading] = useState<boolean>(false)
     const {cart, setCart} = useContext(CartContext)
@@ -27,7 +27,7 @@ const ProductList = () => {
         setLoading(true)
         try {
             const result= await axios.get('/api/products?category=' + categoryName)
-            console.log(result.data)
+
             setLoading(false)
             setCart(result.data.cart)
             setProductList(result.data)

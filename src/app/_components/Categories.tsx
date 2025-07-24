@@ -27,15 +27,15 @@ export const Categories = () => {
     const GetCategoryList = async () => {
         setLoading(true)
         const result = await axios.get('/api/categories')
-        console.log(result.data)
+
         setCategoryList(result.data?.data)
         setLoading(false)
-    } // getting categories
+    }
 
     if (loading) {
         return <LoaderOne/>
     }
-    console.log(categoryList)
+
     return (
         <div className=' px-2 md:px-10 lg:px-20'>
             <h1 className='font-semibold text-2xl'>Популярные категории</h1>

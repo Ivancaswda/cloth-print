@@ -1,4 +1,4 @@
-// api/order/route.ts
+
 import { NextRequest, NextResponse } from "next/server";
 import { axiosClient } from "@/lib/axiosClient";
 
